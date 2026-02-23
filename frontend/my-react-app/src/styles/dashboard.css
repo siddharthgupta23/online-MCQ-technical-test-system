@@ -1,0 +1,375 @@
+/* Student Dashboard Styles */
+.left-panel {
+  border-right: 2px solid rgba(0,0,0,0.05);
+  background: #ffffff;
+  min-width: 260px;
+  max-width: 280px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.05);
+  position: relative;
+  z-index: 1000;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Sidebar overlay for mobile */
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.quiz-card {
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  border: 1px solid #e0e0e0;
+  overflow: hidden;
+  width: 100%;
+  max-width: 350px;
+  margin: 0.5rem;
+}
+
+.quiz-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  border-color: #005bff;
+}
+
+.quiz-card .card-body {
+  padding: 1.5rem;
+}
+
+.quiz-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.quiz-card .card-title {
+  font-weight: 600;
+  color: #1a1a1a;
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+}
+
+.quiz-card .btn {
+  border-radius: 8px;
+  font-weight: 500;
+  padding: 0.625rem 1rem;
+  transition: all 0.2s;
+}
+
+.quiz-card .btn-primary {
+  background: linear-gradient(135deg, #005bff 0%, #0044cc 100%);
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 91, 255, 0.3);
+}
+
+.quiz-card .btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 91, 255, 0.4);
+}
+
+.quiz-card .btn-secondary.disabled {
+  background-color: #6c757d;
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Sidebar Navigation */
+.left-panel .h6 {
+  font-weight: 700;
+  color: #005bff;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.left-panel .btn {
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  text-align: left;
+  transition: all 0.2s;
+  font-weight: 500;
+}
+
+.left-panel .btn-light {
+  background-color: #f8f9fa;
+  border: 1px solid #e0e0e0;
+  color: #333;
+}
+
+.left-panel .btn-light:hover {
+  background-color: #e9ecef;
+  border-color: #005bff;
+  color: #005bff;
+}
+
+.left-panel .btn-primary {
+  background: linear-gradient(135deg, #005bff 0%, #0044cc 100%);
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 91, 255, 0.2);
+}
+
+/* Notifications */
+.left-panel .border-top {
+  border-top: 2px solid #e0e0e0 !important;
+  padding-top: 1rem;
+  margin-top: auto;
+}
+
+.left-panel .small {
+  font-size: 0.875rem;
+}
+
+.left-panel .bg-white.border {
+  border: 2px solid #005bff !important;
+  background-color: #eef5ff !important;
+}
+
+/* Main Content Area */
+main.flex-grow-1 {
+  background: #f8f9fa;
+  min-height: 100vh;
+  padding: 2rem;
+  width: 100%;
+  transition: margin-left 0.3s ease;
+}
+
+@media (min-width: 769px) {
+  main.flex-grow-1 {
+    margin-left: 0;
+  }
+}
+
+main h3 {
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+}
+
+main .text-muted {
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+/* Performance Cards */
+.card.m-2.p-3 {
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  border: 1px solid #e0e0e0;
+}
+
+.card.m-2.p-3:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.card.m-2.p-3 .btn-outline-primary {
+  border-color: #005bff;
+  color: #005bff;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.card.m-2.p-3 .btn-outline-primary:hover {
+  background-color: #005bff;
+  color: white;
+  transform: translateY(-1px);
+}
+
+/* Responsive Design - Tablet */
+@media (max-width: 992px) {
+  .left-panel {
+    min-width: 240px;
+    max-width: 260px;
+  }
+  
+  main.flex-grow-1 {
+    padding: 1.5rem;
+  }
+}
+
+/* Responsive Design - Mobile */
+@media (max-width: 768px) {
+  .sidebar-overlay {
+    display: block;
+  }
+
+  .left-panel {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    width: 85%;
+    max-width: 320px;
+    min-width: 260px;
+    height: 100vh;
+    overflow-y: auto;
+    box-shadow: 4px 0 16px rgba(0,0,0,0.25);
+    transform: translateX(-100%);
+  }
+
+  .left-panel.sidebar-open {
+    transform: translateX(0);
+  }
+
+  .left-panel.sidebar-closed {
+    transform: translateX(-100%);
+  }
+
+  .sidebar-close-btn {
+    display: block !important;
+  }
+
+  main.flex-grow-1 {
+    padding: 1rem;
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .quiz-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0.75rem 0 !important;
+  }
+
+  .feedback-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0.75rem 0 !important;
+  }
+
+  main h3 {
+    font-size: 1.5rem;
+  }
+
+  .sidebar-toggle-btn {
+    display: block !important;
+  }
+}
+
+/* Responsive Design - Small Mobile */
+@media (max-width: 576px) {
+  .left-panel {
+    width: 90%;
+    max-width: 100%;
+  }
+
+  main.flex-grow-1 {
+    padding: 0.75rem;
+  }
+
+  main h3 {
+    font-size: 1.25rem;
+  }
+
+  .quiz-card .card-body {
+    padding: 1rem;
+  }
+
+  .feedback-card {
+    padding: 1rem !important;
+  }
+
+  .btn {
+    font-size: 0.875rem;
+    padding: 0.5rem 0.75rem;
+  }
+}
+
+/* Responsive Design - Extra Small Mobile */
+@media (max-width: 400px) {
+  .left-panel {
+    width: 95%;
+  }
+
+  main.flex-grow-1 {
+    padding: 0.5rem;
+  }
+
+  main h3 {
+    font-size: 1.1rem;
+  }
+}
+
+
+/* Mobile Menu Toggle */
+.sidebar-toggle-btn {
+  display: none;
+  background-color: #f8f9fa;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  font-size: 1.25rem;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.sidebar-toggle-btn:hover {
+  background-color: #e9ecef;
+  border-color: #005bff;
+}
+
+.sidebar-close-btn {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .sidebar-toggle-btn {
+    display: block;
+  }
+  
+  .sidebar-close-btn {
+    display: block !important;
+  }
+}
+
+/* Refresh Button */
+.btn-outline-secondary {
+  border-color: #6c757d;
+  color: #6c757d;
+  border-radius: 8px;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #6c757d;
+  color: white;
+  border-color: #6c757d;
+}
+
+/* Logout Button */
+.btn-outline-danger {
+  border-color: #dc3545;
+  color: #dc3545;
+  border-radius: 8px;
+  font-weight: 500;
+  padding: 0.75rem 1rem;
+  transition: all 0.2s;
+}
+
+.btn-outline-danger:hover {
+  background-color: #dc3545;
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3);
+}
