@@ -64,3 +64,7 @@ connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true
   .catch(err => {
     console.error('MongoDB connection error', err);
   });
+
+app.get('/', (req, res) => {
+  res.send('Server is running successfully');
+});
