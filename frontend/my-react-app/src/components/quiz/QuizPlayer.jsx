@@ -281,7 +281,7 @@ export default function QuizPlayer() {
   useEffect(() => {
     async function load() {
       const token = localStorage.getItem('token');
-      const res = await axios.get(`http://localhost:3023/api/quizzes/subject/${encodeURIComponent(subject)}/start`, {
+      const res = await axios.get(`https://online-mcq-technical-test-system.vercel.app/api/quizzes/subject/${encodeURIComponent(subject)}/start`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setQuiz(res.data.quiz);
@@ -406,7 +406,7 @@ export default function QuizPlayer() {
       // Make async request (non-blocking)
       const token = localStorage.getItem('token');
       axios.post(
-        'http://localhost:3023/api/results/infraction',
+        'https://online-mcq-technical-test-system.vercel.app/api/results/infraction',
         {
           quizIdOrSubject: quiz?.subject || subject,
           type,
@@ -459,7 +459,7 @@ export default function QuizPlayer() {
         infractions: infractionsRef.current || 0
       };
       const token = localStorage.getItem('token');
-      const res = await axios.post('http://localhost:3023/api/results', payload, { headers: { Authorization: `Bearer ${token}` } });
+      const res = await axios.post('https://online-mcq-technical-test-system.vercel.app/api/results', payload, { headers: { Authorization: `Bearer ${token}` } });
       exitFullscreen();
       navigate(`/quiz/${quiz.subject}/result/${res.data.result._id}`);
     } catch (err) {

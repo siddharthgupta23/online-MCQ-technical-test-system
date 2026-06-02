@@ -39,11 +39,11 @@ export default function StudentDashboard() {
     try {
       const token = localStorage.getItem('token');
       const headers = { Authorization: `Bearer ${token}` };
-      const q = await axios.get('http://localhost:3023/api/quizzes/my', { headers });
+      const q = await axios.get('https://online-mcq-technical-test-system.vercel.app/api/quizzes/my', { headers });
       setQuizzes(q.data);
-      const n = await axios.get('http://localhost:3023/api/notifications/my', { headers });
+      const n = await axios.get('https://online-mcq-technical-test-system.vercel.app/api/notifications/my', { headers });
       setNotifs(n.data);
-      const r = await axios.get('http://localhost:3023/api/results/my', { headers });
+      const r = await axios.get('https://online-mcq-technical-test-system.vercel.app/api/results/my', { headers });
       setResults(r.data);
     } catch (err) {
       console.error(err);
@@ -58,7 +58,7 @@ export default function StudentDashboard() {
         return;
       }
 
-      const res = await fetch(`http://localhost:3023/api/notifications/${id}/read`, {
+      const res = await fetch(`https://online-mcq-technical-test-system.vercel.app/api/notifications/${id}/read`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

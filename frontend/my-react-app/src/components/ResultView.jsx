@@ -124,7 +124,7 @@ export default function ResultView() {
     async function load() {
       const token = localStorage.getItem('token');
       const res = await axios.get(
-        `http://localhost:3023/api/results/${resultId}`,
+        `https://online-mcq-technical-test-system.vercel.app/api/results/${resultId}`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
       setResult(res.data);

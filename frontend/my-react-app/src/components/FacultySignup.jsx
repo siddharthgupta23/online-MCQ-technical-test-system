@@ -60,7 +60,7 @@ const FacultySignup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:3023/api/faculty/signup', { name, email, password });
+      const res = await axios.post('https://online-mcq-technical-test-system.vercel.app/api/faculty/signup', { name, email, password });
       localStorage.setItem('token', res.data.token);
       navigate('/success');
     } catch (err) {

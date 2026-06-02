@@ -47,7 +47,7 @@ const StudentLogin = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:3023/api/student/login', { userId, password });
+      const res = await axios.post('https://online-mcq-technical-test-system.vercel.app/api/student/login', { userId, password });
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('student', JSON.stringify(res.data.student));
       navigate('/student');

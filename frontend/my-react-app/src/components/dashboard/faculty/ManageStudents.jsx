@@ -17,7 +17,7 @@ const ManageStudents = () => {
   const fetchStudents = async () => {
     try {
       const token = localStorage.getItem('token');
-      const res = await axios.get('http://localhost:3023/api/faculty/students', {
+      const res = await axios.get('https://online-mcq-technical-test-system.vercel.app/api/faculty/students', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setStudents(res.data);
@@ -42,7 +42,7 @@ const ManageStudents = () => {
   const handleSave = async () => {
     try {
       const token = localStorage.getItem('token');
-      await axios.put(`http://localhost:3023/api/faculty/students/${editingId}`, editForm, {
+      await axios.put(`https://online-mcq-technical-test-system.vercel.app/api/faculty/students/${editingId}`, editForm, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setEditingId(null);

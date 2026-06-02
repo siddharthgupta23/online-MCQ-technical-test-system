@@ -25,7 +25,7 @@ const AddQuestions = () => {
   const fetchQuiz = async () => {
     try {
       const token = localStorage.getItem('token');
-      const res = await axios.get(`http://localhost:3023/api/faculty/quizzes/${id}`, {
+      const res = await axios.get(`https://online-mcq-technical-test-system.vercel.app/api/faculty/quizzes/${id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setQuiz(res.data);
@@ -55,7 +55,7 @@ const AddQuestions = () => {
 
     try {
       const token = localStorage.getItem('token');
-      await axios.post(`http://localhost:3023/api/faculty/quizzes/${id}/questions`, {
+      await axios.post(`https://online-mcq-technical-test-system.vercel.app/api/faculty/quizzes/${id}/questions`, {
         questions: [{
           text: manualQuestion.text,
           options: manualQuestion.options,
@@ -88,7 +88,7 @@ const AddQuestions = () => {
     try {
       const token = localStorage.getItem('token');
       const res = await axios.post(
-        `http://localhost:3023/api/faculty/quizzes/${id}/questions/upload`,
+        `https://online-mcq-technical-test-system.vercel.app/api/faculty/quizzes/${id}/questions/upload`,
         formData,
         {
           headers: {

@@ -16,7 +16,7 @@ const SendNotification = () => {
 
     try {
       const token = localStorage.getItem('token');
-      const res = await axios.post('http://localhost:3023/api/faculty/notifications/send', {
+      const res = await axios.post('https://online-mcq-technical-test-system.vercel.app/api/faculty/notifications/send', {
         message
       }, {
         headers: { Authorization: `Bearer ${token}` }

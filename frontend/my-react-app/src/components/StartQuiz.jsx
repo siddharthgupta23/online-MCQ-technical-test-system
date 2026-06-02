@@ -11,7 +11,7 @@ export default function StartQuiz() {
   React.useEffect(() => {
     async function load() {
       const token = localStorage.getItem('token');
-      const res = await axios.get(`http://localhost:3023/api/quizzes/subject/${subject}`, { headers: { Authorization: `Bearer ${token}` }});
+      const res = await axios.get(`https://online-mcq-technical-test-system.vercel.app/api/quizzes/subject/${subject}`, { headers: { Authorization: `Bearer ${token}` }});
       setQuiz(res.data);
     }
     load();

@@ -48,7 +48,7 @@ const FacultyDashboard = () => {
       return;
     }
 
-    axios.get('http://localhost:3023/api/me', {
+    axios.get('https://online-mcq-technical-test-system.vercel.app/api/me', {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(res => {

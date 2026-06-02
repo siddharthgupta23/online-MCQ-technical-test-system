@@ -17,7 +17,7 @@ const Overall = () => {
   const fetchStats = async () => {
     try {
       const token = localStorage.getItem('token');
-      const res = await axios.get('http://localhost:3023/api/faculty/dashboard/stats', {
+      const res = await axios.get('https://online-mcq-technical-test-system.vercel.app/api/faculty/dashboard/stats', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setStats(res.data);

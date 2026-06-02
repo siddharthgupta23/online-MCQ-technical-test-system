@@ -17,7 +17,7 @@ export default function ResultFeedbackPage() {
       setError(null);
       try {
         const token = localStorage.getItem('token');
-        const res = await axios.get(`http://localhost:3023/api/results/results/${resultId}`, {
+        const res = await axios.get(`https://online-mcq-technical-test-system.vercel.app/api/results/results/${resultId}`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         setResultData(res.data); // { result, quiz }

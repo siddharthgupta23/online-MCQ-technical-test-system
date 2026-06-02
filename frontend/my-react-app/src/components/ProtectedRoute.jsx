@@ -44,7 +44,7 @@ export default function ProtectedRoute({ children }) {
         return; 
       }
       try {
-        const res = await axios.get('http://localhost:3023/api/me', {
+        const res = await axios.get('https://online-mcq-technical-test-system.vercel.app/api/me', {
           headers: {
             Authorization: `Bearer ${token}`,
           },

@@ -15,7 +15,7 @@ const QuizDetails = () => {
   const fetchQuizDetails = async () => {
     try {
       const token = localStorage.getItem('token');
-      const res = await axios.get(`http://localhost:3023/api/faculty/quizzes/${id}/details`, {
+      const res = await axios.get(`https://online-mcq-technical-test-system.vercel.app/api/faculty/quizzes/${id}/details`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setQuizData(res.data);

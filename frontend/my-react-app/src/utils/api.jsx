@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: 'http://localhost:3023/api',
+  baseURL: 'https://online-mcq-technical-test-system.vercel.app/api',
 });
 
 // attach token to headers automatically

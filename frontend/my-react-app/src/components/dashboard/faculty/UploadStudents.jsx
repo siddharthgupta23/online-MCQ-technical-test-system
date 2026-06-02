@@ -30,7 +30,7 @@ const UploadStudents = () => {
       const formData = new FormData();
       formData.append('file', file);
 
-      const res = await axios.post('http://localhost:3023/api/faculty/students/upload', formData, {
+      const res = await axios.post('https://online-mcq-technical-test-system.vercel.app/api/faculty/students/upload', formData, {
         headers: {
           Authorization: `Bearer ${token}`,
           'Content-Type': 'multipart/form-data'
